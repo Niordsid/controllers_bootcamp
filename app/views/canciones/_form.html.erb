@@ -1,0 +1,17 @@
+<%= form_with(model: cancione, local: true) do |form| %>
+  <% if cancione.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cancione.errors.count, "error") %> prohibited this cancione from being saved:</h2>
+
+      <ul>
+      <% cancione.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

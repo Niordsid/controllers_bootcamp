@@ -1,0 +1,2 @@
+class Cancione < ApplicationRecord
+end
