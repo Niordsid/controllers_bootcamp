@@ -13,13 +13,16 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # require 'pry'; binding.pry
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to @product
-    else
-      render :new, status: :unprocessable_entity
+      # flash.now[:notice] = "Su producto ha sido creado satisfactoriamente!"
+      #flash.keep
+      redirect_to @product, notice: "Su producto ha sido creado satisfactoriamente!"
     end
+  rescue => e
+    redirect_to new_product_path, notice: "No se ha podido crear su producto intente de nuevo"
   end
 
   def delete
@@ -51,6 +54,6 @@ class ProductsController < ApplicationController
   private
   # Strong Params
   def product_params
-    params.require(:product).permit(:name, :summary)
+    params.require(:product).permit(:name, :summary, :price, stock: [:products_available, :refence_stock])
   end
 end
