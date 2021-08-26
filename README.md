@@ -5,20 +5,14 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version:
+2.5.8
 
-* System dependencies
-
-* Configuration
+* Rails version: 
+5.2.6
 
 * Database creation
+The database used in this project for testing purposes is sqlite, run the command: bundle exec rails db:create
+run the migrations with the command: bundle exec rails db:migrate
+populate the database with fake data with: bundle exec rails db:seed
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
