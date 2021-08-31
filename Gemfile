@@ -47,6 +47,7 @@ group :development, :test do
   gem 'pry-byebug',                         require: false
   gem 'pry-doc',                            require: false
   gem 'faker'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
